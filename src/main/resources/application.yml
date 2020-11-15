@@ -1,0 +1,18 @@
+server:
+  port: 10091   # Application port
+
+spring:
+  profiles:
+    active: local
+
+cloud:
+  aws:
+    region:
+      static: eu-central-1   # Region where you have created the queue. In this example, we have created the queue in 'ap-south-1' region.
+      auto: false
+    credentials:
+      access-key: SET_IN_LOCAL_PROFILE
+      secret-key: SET_IN_LOCAL_PROFILE
+    stack:
+      auto: false
+
