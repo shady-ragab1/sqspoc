@@ -1,0 +1,26 @@
+{
+   "AWSTemplateFormatVersion": "2010-09-09",
+   "Resources": {
+      "MyQueue": {
+         "Properties": {
+            "QueueName": "MyQueue-standard"
+             },
+         "Type": "AWS::SQS::Queue"
+         },
+      "MyTopic": {
+         "Properties": {
+             "TopicName": "MyTopic-standard"
+             },
+         "Type": "AWS::SNS::Topic"
+        },
+      "MySubscription" : {
+         "Type" : "AWS::SNS::Subscription",
+         "Properties" : {
+           "Endpoint" : "+36204891775",
+           "Protocol" : "sms",
+           "TopicArn" : { "Ref" : "MyTopic" }
+          }
+      }
+      }
+
+}

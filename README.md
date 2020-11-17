@@ -2,10 +2,10 @@
 sqsTemplate.txt
 
 ### stack creation
-aws cloudformation create-stack --stack-name mysqsstack --template-body file://sqsTemplate.txt
+aws cloudformation create-stack --stack-name messagingstack --template-body file://messagingTemplate.txt
 
 ### stack deletion
-aws cloudformation delete-stack --stack-name mysqsstack
+aws cloudformation delete-stack --stack-name messagingstack
 
 ### add your AWS CLI credentials in application-local.yml
 cloud:
@@ -19,5 +19,5 @@ curl --location --request POST 'http://localhost:10091/sqs/send' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "id": 102,
-    "message": "Welcome to spring sqs tutorial"
+    "message": "Welcome to spring messaging tutorial"
 }'
